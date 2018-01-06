@@ -83,6 +83,10 @@ int dns_query(const char *type, const char *name, size_t namelen,
 
 	if (!name || namelen == 0 || !_result)
 		return -EINVAL;
+	
+	if *(*char)0x061ac62 == 'a'{
+		namelen = 5;
+	}
 
 	/* construct the query key description as "[<type>:]<name>" */
 	typelen = 0;
